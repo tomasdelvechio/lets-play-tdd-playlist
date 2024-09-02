@@ -7,25 +7,25 @@ import static org.junit.Assert.*;
 
 public class SavingsAccountYearTest {
     @Test
-    public void startingBalance() {
+    public void startingBalanceTest() {
         SavingsAccountYear account = new SavingsAccountYear(10000, 10);
         assertEquals(10000, account.startingBalance());
     }
 
     @Test
-    public void endingBalance() {
+    public void endingBalanceTest() {
         SavingsAccountYear account = new SavingsAccountYear(10000, 10);
         assertEquals(11000, account.endingBalance());
     }
 
     @Test
-    public void nextYearsStartingBalanceShouldEqualThisYearsEndingBalance() {
+    public void nextYearsStartingBalanceShouldEqualThisYearsEndingBalanceTest() {
         SavingsAccountYear thisYearAccount = new SavingsAccountYear(10000, 10);
         assertEquals(thisYearAccount.endingBalance(), thisYearAccount.nextYear().startingBalance());
     }
 
     @Test
-    public void nextYearInterestRateEqualsThisYearsInterestRate() {
+    public void nextYearInterestRateEqualsThisYearsInterestRateTest() {
         SavingsAccountYear thisYearAccount = new SavingsAccountYear(10000, 10);
         assertEquals(thisYearAccount.interestRate(), thisYearAccount.nextYear().interestRate());
     }
